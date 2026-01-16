@@ -1,0 +1,104 @@
+.admin-page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.admin-page h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.admin-title {
+  color: #38bdf8;
+  margin-bottom: 25px;
+}
+
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+.admin-page input,
+.admin-page textarea,
+.admin-page select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background-color: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+
+.admin-page textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.admin-page input::placeholder,
+.admin-page textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+.admin-page select {
+  cursor: pointer;
+}
+
+
+.admin-page button {
+  margin-top: 10px;
+  padding: 12px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-page button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(56,189,248,0.4);
+}
+
+
+.admin-page input:focus,
+.admin-page textarea:focus,
+.admin-page select:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.25);
+}
+
+@media (max-width: 600px) {
+  .admin-page {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .admin-page h1 {
+    font-size: 18px;
+  }
+
+  .admin-title {
+    font-size: 16px;
+  }
+
+  .admin-page button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

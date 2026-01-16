@@ -14,7 +14,20 @@ export default function SignInPage({setUserData}){
         const response=await axios.post("https://leetcode-clone-backend-1.onrender.com/api/all/getSignIn",send,{withCredentials:true});
         if(response.data.message==="Login Successfully"){
             setUserData(response.data.data);
-            navigate('/HomePage');
+            try{
+                const send={gmail};
+const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/all/admin',send,{withCredentials:true});
+if(response.data.message=== 'admin found'){
+    navigate('/AdminPage');
+}
+            }catch(err){
+                if(err.response?.data?.message=== 'please provide gmai'){
+                    alert('please provide gmai');
+                }else if(err.response?.data?.message=== 'user not found'){
+                    alert('user not found');
+                }
+            }
+            //else if
         }
     }catch(err){
         if(err.response?.data?.message==="Something went Wrong"){

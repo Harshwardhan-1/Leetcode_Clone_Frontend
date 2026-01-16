@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import ForgotPassword from './components/ForgotPassword';
 import OtpVerify from './components/OtpVerify';
 import NewPassword from './components/NewPassword';
+import AdminPage from './components/AdminPage';
 import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
@@ -35,7 +36,7 @@ function App() {
       <Route path='/ForgotPassword' element={<ForgotPassword setPasswordData={setPasswordData}/>}></Route>
       <Route path='/OtpVerify' element={<OtpVerify passwordData={passwordData} /> }></Route>
       <Route path='/NewPassword' element={<NewPassword />}></Route>
-
+      <Route path='/AdminPage' element={<AdminPage />}></Route>
     </Routes>
     </>
   )
