@@ -18,7 +18,7 @@ export default function AdminPage(){
 e.preventDefault();
 const send={title,description,functionSignature,constraint,sampleInput,sampleOutput,difficulty,topic};
 try{
-    const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/question/addQuestion',send,{withCredentials:true});
+    const response=await axios.post('http://localhost:3000/api/question/addQuestion',send,{withCredentials:true});
     if(response.data.message=== 'question created successfully'){
         alert('question created successfull');
     }
@@ -50,6 +50,7 @@ try{
  <textarea placeholder="Sample Input" value={sampleInput}onChange={(e) => setSampleInput(e.target.value)}/>
 <textarea placeholder="Sample Output" value={sampleOutput}onChange={(e) => setSampleOutput(e.target.value)}/>
     <select value={difficulty} onChange={(e)=>setDifficulty(e.target.value)}>
+        <option value="Choose Difficulty">Choose Difficulty</option>
     <option value="Easy">Easy</option>
     <option value="Medium">Medium</option>
     <option value="Hard">Hard</option>

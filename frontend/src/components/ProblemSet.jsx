@@ -1,6 +1,8 @@
 import {useState,useEffect} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 export default function ProblemSet(){
+    const navigate=useNavigate();
     const [data,setData]=useState(null);
     const [problem,showProblem]=useState([]);
     const [specific,setSpecific]=useState(null);
@@ -35,9 +37,11 @@ showProblem(response.data.data);
     const handleParticular=async(id)=>{
         const send={id};
         try{
-            const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/question/particularQuestion',send,{withCredentials:true});
+            const response=await axios.post('http://localhost:3000/api/question/particularQuestion',send,{withCredentials:true});
             if(response.data.message=== 'got particular problem'){
-                setSpecific(response.data.data);
+                const problemData=response.data.data;
+                setSpecific(problemData);
+                navigate('/ParticularProblem',{state:{problem:problemData}});
             }
         }catch(err){
             if(err.response?.data?.message=== 'provide proper detail'){

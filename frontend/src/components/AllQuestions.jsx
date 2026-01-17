@@ -6,7 +6,7 @@ export default function AllQuestions(){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-                const response=await axios.get('https://leetcode-clone-backend-1.onrender.com/api/question/allQuestion',{withCredentials:true});
+                const response=await axios.get('http://localhost:3000/api/question/allQuestion',{withCredentials:true});
                 setData(response.data.data);
             }catch(err){
                 console.log(err);

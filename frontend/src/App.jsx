@@ -8,6 +8,7 @@ import NewPassword from './components/NewPassword';
 import AdminPage from './components/AdminPage';
 import AllQuestions from './components/AllQuestions';
 import ProblemSet from './components/ProblemSet';
+import ParticularProbem from './components/ParticularProblem';
 import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
@@ -15,7 +16,7 @@ function App() {
   useEffect(()=>{
     const UpBackend=async()=>{
       try{
-        const response=await axios.get('https://leetcode-clone-backend-1.onrender.com',{withCredentials:true});
+        const response=await axios.get('http://localhost:3000',{withCredentials:true});
         console.log(response.data);
       }catch(err){
         if(err.response){
@@ -41,6 +42,7 @@ function App() {
       <Route path='/AdminPage' element={<AdminPage />}></Route>
       <Route path='/AllQuestions' element={<AllQuestions />}></Route>
       <Route path='/ProblemSet' element={<ProblemSet />}></Route>
+      <Route path='/ParticularProblem' element={<ParticularProbem />}></Route>
     </Routes>
     </>
   )
