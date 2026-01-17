@@ -1,7 +1,9 @@
 import {useState} from 'react';
 import './AdminPage.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 export default function AdminPage(){
+    const navigate=useNavigate();
     const [title,setTitle]=useState('');
     const [description,setDescription]=useState('');
     const [functionSignature,setFunctionSignature]=useState('');
@@ -28,14 +30,19 @@ try{
     }
 }
     }
-  
 
+
+    const handleAll=()=>{
+        navigate('/AllQuestions');
+    }
+
+    
     return(
         <>
         <div className="admin-page">
         <h1 >This Is Admin Page Harsh</h1>
         <h1 className="admin-title">Admin-ADD QUESTION PAGE</h1>
-        <form className="admin-form" action="">
+        <form className="admin-form" onSubmit={handle}>
 <input type="text" placeholder='Enter question title here' value={title} onChange={(e)=>setTitle(e.target.value)} />
 <textarea  placeholder='Enter description here' value={description} onChange={(e)=>setDescription(e.target.value)}/>
 <input type="text" placeholder='Enter functionSignature here' value={functionSignature} onChange={(e)=>setFunctionSignature(e.target.value)} />
@@ -44,13 +51,15 @@ try{
 <textarea placeholder="Sample Output" value={sampleOutput}onChange={(e) => setSampleOutput(e.target.value)}/>
     <select value={difficulty} onChange={(e)=>setDifficulty(e.target.value)}>
     <option value="Easy">Easy</option>
-    <option value="Medieum">Medium</option>
+    <option value="Medium">Medium</option>
     <option value="Hard">Hard</option>
 </select>
 <input type="text" placeholder='Enter topic here Ex(Array,HashMap)' value={topic}  onChange={(e)=>setTopic(e.target.value)}/>
-       <button onClick={handle} type='submit'>Add Question</button>
+       <button  type='submit'>Add Question</button>
         </form>
         </div>
+
+        <button onClick={handleAll}>See All Question</button>
         </>
     );
 }
