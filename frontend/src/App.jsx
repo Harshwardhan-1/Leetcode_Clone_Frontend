@@ -16,7 +16,7 @@ function App() {
   useEffect(()=>{
     const UpBackend=async()=>{
       try{
-        const response=await axios.get('http://localhost:3000',{withCredentials:true});
+        const response=await axios.get('https://leetcode-clone-backend-1.onrender.com',{withCredentials:true});
         console.log(response.data);
       }catch(err){
         if(err.response){

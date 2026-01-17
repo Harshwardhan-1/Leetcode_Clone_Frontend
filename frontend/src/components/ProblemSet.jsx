@@ -37,7 +37,7 @@ showProblem(response.data.data);
     const handleParticular=async(id)=>{
         const send={id};
         try{
-            const response=await axios.post('http://localhost:3000/api/question/particularQuestion',send,{withCredentials:true});
+            const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/question/particularQuestion',send,{withCredentials:true});
             if(response.data.message=== 'got particular problem'){
                 const problemData=response.data.data;
                 setSpecific(problemData);

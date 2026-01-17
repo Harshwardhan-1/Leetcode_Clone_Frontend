@@ -8,18 +8,29 @@ export default function ParticularProbem(){
     const [result,setResult]=useState(null);
     const location=useLocation();
     const harsh=location.state?.problem;
-
-
-
     const handleRunButton=async(id)=>{
         const send={id,language,userCode};
         try{
-const response=await axios.post('http://localhost:3000/api/runCode/CheckRunCode',send,{withCredentials:true});
+const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/runCode/CheckRunCode',send,{withCredentials:true});
 console.log(response);
 setResult(response.data);
         }catch(err){
             console.log(err);
         }
+    }
+
+    const handleSubmit=async(title,description,difficulty,topic)=>{
+        const send={title,description,difficulty,topic};
+    try{
+        const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/submit/submitSol',send,{withCredentials:true});
+        if(response.data.message=== 'successfully submitted'){
+            alert('successfully submit');
+        } 
+    }catch(err){
+        if(err.response?.data?.message=== 'provide proper detail'){
+            alert('provide proper detail');
+        }
+    }
     }
 
     return(
@@ -48,8 +59,8 @@ setResult(response.data);
         <textarea className="pp-code-editor" placeholder='Write Your Code Here' onChange={(e)=>setUserCode(e.target.value)}/>
            <div className="pp-buttons">
 
-          <button onClick={()=>handleRunButton(harsh._id)} className="pp-run-btn">Run Code</button>
-          <button className="pp-submit-btn">Submit</button>
+<button onClick={()=>handleRunButton(harsh._id)} className="pp-run-btn">Run Code</button>
+<button onClick={()=>handleSubmit(harsh?.title,harsh?.description,harsh?.difficulty,harsh?.topic)} className="pp-submit-btn">Submit</button>
         </div>
         <div className="pp-sample">
           <p><strong>Sample Input:</strong> {JSON.stringify(harsh?.sampleInput)}</p>
