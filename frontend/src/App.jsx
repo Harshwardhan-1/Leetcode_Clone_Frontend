@@ -9,6 +9,8 @@ import AdminPage from './components/AdminPage';
 import AllQuestions from './components/AllQuestions';
 import ProblemSet from './components/ProblemSet';
 import ParticularProblem from './components/ParticularProblem';
+import AllSubmission from './components/AllSubmission';
+import AllPointsEarned from './components/AllPointsEarned';
 import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
@@ -43,6 +45,8 @@ function App() {
       <Route path='/AllQuestions' element={<AllQuestions />}></Route>
       <Route path='/ProblemSet' element={<ProblemSet />}></Route>
       <Route path='/ParticularProblem' element={<ParticularProblem />}></Route>
+      <Route path='/AllSubmission' element={<AllSubmission />}></Route>
+      <Route path='/AllPointsEarned' element={<AllPointsEarned />}></Route>
     </Routes>
     </>
   )

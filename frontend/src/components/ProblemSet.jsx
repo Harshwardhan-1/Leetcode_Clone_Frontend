@@ -24,7 +24,7 @@ if(response.data.message=== 'find user'){
         };
         fetch();
     },[]);
-
+console.log(data);
 
     const handleProblems=async(e)=>{
         e.preventDefault();
@@ -52,13 +52,21 @@ showProblem(response.data.data);
             }
         }
     }
+    const handleSubmission=async()=>{
+        navigate('/AllSubmission');
+    }
+    const handlePoints=async()=>{
+        navigate('/AllPointsEarned');
+    }
     return(
         <>
-        <div className="problem-set-page"> 
-            <h1>Problem Set</h1>
-            <p>Name:{data?.name}</p>
-            <p>Gmail:{data?.gmail}</p>
+        <h1 className='code-platform'>Code Platform</h1>
+        <div className="problem-set-container"> 
+            <button>Home</button>
             <button onClick={handleProblems}>See All Problems</button>
+            <button onClick={handleSubmission}>See All Submission</button>
+            <button onClick={handlePoints}>See All Points</button>
+            <button>Profile</button>
         </div>
 
            <div className="problem-list">

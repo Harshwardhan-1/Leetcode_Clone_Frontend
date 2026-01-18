@@ -1,0 +1,52 @@
+.all-submission-container {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+}
+
+.all-submission-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.all-submission-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.all-submission-card {
+    background-color: #f9fafb;
+    border-left: 6px solid #3b82f6;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.all-submission-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.all-submission-card p.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.all-submission-card pre {
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 15px 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

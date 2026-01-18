@@ -1,83 +1,95 @@
-.problem-set-page {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #f5f6fa;
-    border-radius: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-
-.problem-set-page h1 {
+.code-platform {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 25px;
     text-align: center;
-    margin-bottom: 2rem;
-    color: #222;
-    font-size: 2rem;
 }
 
-
-.problem-set-page p {
-    font-weight: 500;
-    margin: 0.5rem 0;
-    color: #333;
+.problem-set-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    background-color: #1e293b;
+    border-radius: 12px;
+    margin-bottom: 30px;
 }
 
-
-.problem-set-page button {
-    background-color: #ffa116;
-    color: white;
+.problem-set-container button {
+    padding: 10px 22px;
+    background-color: #3b82f6;
+    color: #ffffff;
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
+    font-weight: 500;
+    transition: all 0.25s;
 }
 
-.problem-set-page button:hover {
-    background-color: #ff8c00;
+.problem-set-container button:hover {
+    background-color: #2563eb;
     transform: translateY(-2px);
 }
 
-
 .problem-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-
 .problem-list button {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 0.8rem 1rem;
+    width: 100%;
+    padding: 14px 18px;
     text-align: left;
-    border-radius: 5px;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 16px;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: all 0.25s;
 }
 
 .problem-list button:hover {
-    background-color: #f0f4f8;
-    transform: translateX(5px);
+    background-color: #e5e7eb;
+    transform: translateX(4px);
 }
 
 .problem-details {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: #fff;
-    border-left: 5px solid #ffa116;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .problem-details p {
-    margin: 0.5rem 0;
-    line-height: 1.6;
-    color: #333;
-    font-weight: 500;
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #111827;
+}
+
+@media (max-width: 768px) {
+    .problem-set-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .problem-list {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-list button {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    .problem-details {
+        padding: 18px;
+    }
 }

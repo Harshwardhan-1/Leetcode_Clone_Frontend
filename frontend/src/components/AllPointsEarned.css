@@ -1,0 +1,40 @@
+.points-container {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+}
+
+.points-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.points-container h2 {
+    font-size: 28px;
+    color: #3b82f6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.points-card {
+    background-color: #f9fafb;
+    border-left: 6px solid #10b981;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.points-card p {
+    font-size: 17px;
+    color: #111827;
+    margin-bottom: 8px;
+}
