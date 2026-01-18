@@ -1,0 +1,83 @@
+.problem-set-page {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f5f6fa;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+
+.problem-set-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+    font-size: 2rem;
+}
+
+
+.problem-set-page p {
+    font-weight: 500;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+
+.problem-set-page button {
+    background-color: #ffa116;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.problem-set-page button:hover {
+    background-color: #ff8c00;
+    transform: translateY(-2px);
+}
+
+
+.problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+
+.problem-list button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.problem-list button:hover {
+    background-color: #f0f4f8;
+    transform: translateX(5px);
+}
+
+.problem-details {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-left: 5px solid #ffa116;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.problem-details p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}

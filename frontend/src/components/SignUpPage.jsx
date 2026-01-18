@@ -12,7 +12,7 @@ export default function SignUpPage(){
         e.preventDefault();
         try{
         const send={name,gmail,password};
-        const response=await axios.post("https://leetcode-clone-backend-1.onrender.com/api/all/getSignUp",send,{withCredentials:true});
+        const response=await axios.post("http://localhost:3000/api/all/getSignUp",send,{withCredentials:true});
         if(response.data.message==="Successfully Login"){
             navigate("/signIn");
         }

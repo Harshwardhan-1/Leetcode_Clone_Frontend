@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './ProblemSet.css';
 export default function ProblemSet(){
     const navigate=useNavigate();
     const [data,setData]=useState(null);
@@ -9,7 +10,7 @@ export default function ProblemSet(){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-const response=await axios.get('https://leetcode-clone-backend-1.onrender.com/api/all/particularUser',{withCredentials:true});
+const response=await axios.get('http://localhost:3000/api/all/particularUser',{withCredentials:true});
 if(response.data.message=== 'find user'){
     setData(response.data.data);
 }
@@ -28,7 +29,7 @@ if(response.data.message=== 'find user'){
     const handleProblems=async(e)=>{
         e.preventDefault();
         try{
-const response=await axios.get('https://leetcode-clone-backend-1.onrender.com/api/question/showQuestion',{withCredentials:true});
+const response=await axios.get('http://localhost:3000/api/question/showQuestion',{withCredentials:true});
 showProblem(response.data.data);
         }catch(err){
             console.log(err);
@@ -37,7 +38,7 @@ showProblem(response.data.data);
     const handleParticular=async(id)=>{
         const send={id};
         try{
-            const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/question/particularQuestion',send,{withCredentials:true});
+            const response=await axios.post('http://localhost:3000/api/question/particularQuestion',send,{withCredentials:true});
             if(response.data.message=== 'got particular problem'){
                 const problemData=response.data.data;
                 setSpecific(problemData);
@@ -53,13 +54,14 @@ showProblem(response.data.data);
     }
     return(
         <>
-        <div>
+        <div className="problem-set-page"> 
             <h1>Problem Set</h1>
             <p>Name:{data?.name}</p>
             <p>Gmail:{data?.gmail}</p>
             <button onClick={handleProblems}>See All Problems</button>
         </div>
 
+           <div className="problem-list">
         {
             problem.map((all,index)=>(
                 <div key={index}>
@@ -67,9 +69,13 @@ showProblem(response.data.data);
                 </div>
             ))
         }
+        </div>
+        
 
+        <div className="problem-details">
        <p>{specific?.title}</p>
        <p>{specific?.description}</p>
+        </div>
         </>
     );
 }
