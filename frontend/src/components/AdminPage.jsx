@@ -18,7 +18,7 @@ export default function AdminPage(){
 e.preventDefault();
 const send={title,description,functionSignature,constraint,sampleInput,sampleOutput,difficulty,topic};
 try{
-    const response=await axios.post('http://localhost:3000/api/question/addQuestion',send,{withCredentials:true});
+    const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/question/addQuestion',send,{withCredentials:true});
     if(response.data.message=== 'question created successfully'){
         alert('question created successfull');
     }
@@ -40,7 +40,7 @@ try{
         e.preventDefault();
         const send={title,sampleInput,sampleOutput};
         try{
-const response=await axios.post('http://localhost:3000/api/hidden/addHiddenTestCase',send,{withCredentials:true});
+const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/hidden/addHiddenTestCase',send,{withCredentials:true});
 if(response.data.message=== 'successfully created hidden test case'){
     alert('test case added successfully');
 }

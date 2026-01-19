@@ -17,7 +17,7 @@ export default function ParticularProblem() {
     const send = {id,title,language,userCode};
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:3000/api/run/runUserCode",send,{ withCredentials: true });
+      const response = await axios.post("https://leetcode-clone-backend-1.onrender.com/api/run/runUserCode",send,{ withCredentials: true });
       setResult(response.data);
     } catch (err) {
       console.log(err);
@@ -36,7 +36,7 @@ export default function ParticularProblem() {
     const send={id,title,description,userCode};
     if(result?.message === 'all test case passed'){
       try{
-    const response=await axios.post('http://localhost:3000/api/submit/submitCode',send,{withCredentials:true});
+    const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/submit/submitCode',send,{withCredentials:true});
     if(response.data.message=== 'successfully submitted'){
       alert('successfully submitted');
     }

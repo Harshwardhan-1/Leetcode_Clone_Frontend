@@ -9,7 +9,7 @@ export default function OtpVerify({passwordData}){
         e.preventDefault();
     const send={otp};
     try{
-    const response=await axios.post('http://localhost:3000/api/all/OtpVerify',send,{withCredentials:true});
+    const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/all/OtpVerify',send,{withCredentials:true});
     if(response.data.message==="User enter correct otp"){
         navigate("/NewPassword");
     }

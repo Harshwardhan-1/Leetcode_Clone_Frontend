@@ -10,7 +10,7 @@ export default function ProblemSet(){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-const response=await axios.get('http://localhost:3000/api/all/particularUser',{withCredentials:true});
+const response=await axios.get('https://leetcode-clone-backend-1.onrender.com/api/all/particularUser',{withCredentials:true});
 if(response.data.message=== 'find user'){
     setData(response.data.data);
 }
@@ -29,7 +29,7 @@ console.log(data);
     const handleProblems=async(e)=>{
         e.preventDefault();
         try{
-const response=await axios.get('http://localhost:3000/api/question/showQuestion',{withCredentials:true});
+const response=await axios.get('https://leetcode-clone-backend-1.onrender.com/api/question/showQuestion',{withCredentials:true});
 showProblem(response.data.data);
         }catch(err){
             console.log(err);
@@ -38,7 +38,7 @@ showProblem(response.data.data);
     const handleParticular=async(id)=>{
         const send={id};
         try{
-            const response=await axios.post('http://localhost:3000/api/question/particularQuestion',send,{withCredentials:true});
+            const response=await axios.post('https://leetcode-clone-backend-1.onrender.com/api/question/particularQuestion',send,{withCredentials:true});
             if(response.data.message=== 'got particular problem'){
                 const problemData=response.data.data;
                 setSpecific(problemData);

@@ -10,7 +10,7 @@ export default function NewPassword(){
         e.preventDefault();
         const send={password,confirmPassword};
         try{
-        const response=await axios.post("http://localhost:3000/api/all/changePassword",send,{withCredentials:true})
+        const response=await axios.post("https://leetcode-clone-backend-1.onrender.com/api/all/changePassword",send,{withCredentials:true})
         if(response.data.message==="change successfull"){
             navigate('/signIn');
         }

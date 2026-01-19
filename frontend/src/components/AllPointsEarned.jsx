@@ -9,7 +9,7 @@ export default function AllPointsEarned(){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-    const response=await axios.get('http://localhost:3000/api/submit/seeSubmission',{withCredentials:true});
+    const response=await axios.get('https://leetcode-clone-backend-1.onrender.com/api/submit/seeSubmission',{withCredentials:true});
     if(response.data.message=== 'here are your submission'){
         setData(response.data.data);
         const sum=response.data.data.reduce((acc, curr)=>acc+(curr?.points),0);
