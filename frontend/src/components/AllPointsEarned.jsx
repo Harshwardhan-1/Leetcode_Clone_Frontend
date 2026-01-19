@@ -25,7 +25,7 @@ export default function AllPointsEarned(){
     },[]);
     return(
         <>
-                <div className="points-container">
+        <div className="points-container">
         <h1>This are the points that you have Earned</h1>
         <h2>Total Points:{totalPoints}</h2>
         <div className="points-list">
